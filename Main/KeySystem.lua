@@ -1,6 +1,6 @@
 local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/Cyphrous/Moonless-Ui-Library/main/Main/Source.lua")()
 
-local win = Flux:Window("Moonless Hub", "Key System | MlH v0.1", Color3.fromRGB(212, 57, 165), Enum.KeyCode.RightControl)
+local win = Flux:Window("Moonless Hub", "Key System | MlH v0.1", Color3.fromRGB(212, 57, 165))
 local tab = win:Tab("Key System", "http://www.roblox.com/asset/?id=54479722")
     tab:Line()
     tab:Label("                                                      Enter Key Here:")
@@ -9,7 +9,6 @@ local tab = win:Tab("Key System", "http://www.roblox.com/asset/?id=54479722")
             local key = t
             local url = "https://moonlesshub.000webhostapp.com/index.php?key="..key
             if game:HttpGet(url) == key then
-             print "Whitelisted"
             wait(1)
             if game.PlaceId == ID then
                 -- script to run
@@ -21,6 +20,12 @@ local tab = win:Tab("Key System", "http://www.roblox.com/asset/?id=54479722")
             wait(1)
             end
         end) 
+        tab:Button("                                           GET KEY!(CLICK ME)", "                       Copy Link of the Discord to Get the Key Link", function()
+            Flux:Notification("Copy Successful !", "Alright")
+            setclipboard("https://discord.gg/x3wtp3A3S5")
+            end)
+        tab:Line()
+        
 --[[
 tab:Button("Kill all", "This function may not work sometimes and you can get banned.", function()
 Flux:Notification("Killed all players successfully!", "Alright")
